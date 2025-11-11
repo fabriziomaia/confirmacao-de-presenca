@@ -7,10 +7,15 @@ document.getElementById('confirmForm').addEventListener('submit', function(e) {
     return;
   }
 
-  fetch('https://script.google.com/macros/s/AKfycbyMQZikPDKYI6IbHzPkK-uCeTV4gGoXrD2NU97MzGg3d5uK9puBP4zuOya8ErUhlQwgUA/exec', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({ nomes })
+  fetch("https://script.google.com/macros/s/AKfycbyVx.../exec", {
+    method: "POST",
+    mode: "no-cors",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    body: new URLSearchParams({
+      nomes: nomeDigitado,
+    }),
   })
   .then(response => response.text())
   .then(data => {
